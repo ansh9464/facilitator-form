@@ -4,6 +4,7 @@
  <title> facilitator</title>
  <meta charset="UTF-8">
  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 <style>
   body {
@@ -120,6 +121,71 @@ form.registration-form fieldset {
     }
 }
 </style>
+<script>
+	//JS to get the values of the checkboxes
+	$(document).ready(function(){
+		$('.Business').click(function()
+		{
+			var text="";
+			$('.Business:checked').each(function(){
+				text+=$(this).next('label').text()+",";
+			});
+			text = text.substring(0,text.length-1);
+			alert(text);
+			$('#b').val(text);
+		});
+		$('.IT').click(function()
+		{
+			var text="";
+			$('.IT:checked').each(function(){
+				text+=$(this).next('label').text()+",";
+			});
+			text = text.substring(0,text.length-1);
+			alert(text);
+			$('#it').val(text);
+		});
+		$('.Officetools').click(function()
+		{
+			var text="";
+			$('.Officetools:checked').each(function(){
+				text+=$(this).next('label').text()+",";
+			});
+			text = text.substring(0,text.length-1);
+			alert(text);
+			$('#ot').val(text);
+		});
+		$('.Creativetools').click(function()
+		{
+			var text="";
+			$('.Creativetools:checked').each(function(){
+				text+=$(this).next('label').text()+",";
+			});
+			text = text.substring(0,text.length-1);
+			alert(text);
+			$('#ct').val(text);
+		});
+		$('.PersonalityDevelopment').click(function()
+		{
+			var text="";
+			$('.PersonalityDevelopment:checked').each(function(){
+				text+=$(this).next('label').text()+",";
+			});
+			text = text.substring(0,text.length-1);
+			alert(text);
+			$('#pd').val(text);
+		});
+		$('.Solopreneurship').click(function()
+		{
+			var text="";
+			$('.Solopreneurship:checked').each(function(){
+				text+=$(this).next('label').text()+",";
+			});
+			text = text.substring(0,text.length-1);
+			alert(text);
+			$('#s').val(text);
+		});
+	});
+</script>
 <body>
 <div class="container" style="height: 33vh;">
             <!-- <ul id="progressbar">
@@ -324,35 +390,36 @@ form.registration-form fieldset {
           <div class="card-body" style="font-size: 13px;">
 
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="Check1">
+              <input class="form-check-input Business" type="checkbox" value="" id="Check1">
               <label class="form-check-label" for="Check1">
                 Human Resources
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="Check2">
+              <input class="form-check-input Business" type="checkbox" value="" id="Check2">
               <label class="form-check-label" for="Check2">
                 Finance and Accounting
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="Check3">
+              <input class="form-check-input Business" type="checkbox" value="" id="Check3">
               <label class="form-check-label" for="Check3">
                 Marketing
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="Check4">
+              <input class="form-check-input Business" type="checkbox" value="" id="Check4">
               <label class="form-check-label" for="Check4">
                 Digital Marketing
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="Check5">
+              <input class="form-check-input Business" type="checkbox" value="" id="Check5">
               <label class="form-check-label" for="Check5">
                 Trading
               </label>
             </div>
+            <input type="text" name="" readonly="" id="b">
 
           </div>
         </div>
@@ -369,35 +436,38 @@ form.registration-form fieldset {
           <div class="card-body">
 
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="Check1">
+              <input class="form-check-input IT" type="checkbox" value="" id="Check1">
               <label class="form-check-label" for="Check1">
                 Web Development
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="Check2">
+              <input class="form-check-input IT" type="checkbox" value="" id="Check2">
               <label class="form-check-label" for="Check2">
                 Mobile Development
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="Check3">
+              <input class="form-check-input IT" type="checkbox" value="" id="Check3">
               <label class="form-check-label" for="Check3">
                 Data Science
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="Check4">
+              <input class="form-check-input IT" type="checkbox" value="" id="Check4">
               <label class="form-check-label" for="Check4">
                 Programming Languages
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="Check5">
+              <input class="form-check-input IT" type="checkbox" value="" id="Check5">
               <label class="form-check-label" for="Check5">
                 Database Tools
               </label>
             </div>
+
+            <!--Get the values of the checkboxes-->
+            <input type="text" name="" readonly="" id="it">	
 
           </div>
         </div>
@@ -414,23 +484,26 @@ form.registration-form fieldset {
           <div class="card-body">
 
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="Check1">
+              <input class="form-check-input Officetools" type="checkbox" value="" id="Check1">
               <label class="form-check-label" for="Check1">
                 Advance Tools
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="Check2">
+              <input class="form-check-input Officetools" type="checkbox" value="" id="Check2">
               <label class="form-check-label" for="Check2">
                 CAD/CAM
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="Check3">
+              <input class="form-check-input Officetools" type="checkbox" value="" id="Check3">
               <label class="form-check-label" for="Check3">
                 Tally
               </label>
             </div>
+
+            <!--Get the values of the checkboxes-->
+            <input type="text" name="" readonly="" id="ot">	
 
           </div>
         </div>
@@ -447,59 +520,62 @@ form.registration-form fieldset {
           <div class="card-body">
 
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="Check1">
+              <input class="form-check-input Creativetools" type="checkbox" value="" id="Check1">
               <label class="form-check-label" for="Check1">
                 Photography
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="Check2">
+              <input class="form-check-input Creativetools" type="checkbox" value="" id="Check2">
               <label class="form-check-label" for="Check2">
                 Vediography
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="Check3">
+              <input class="form-check-input Creativetools" type="checkbox" value="" id="Check3">
               <label class="form-check-label" for="Check3">
                 Web/ Visual/ Game Design
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="Check4">
+              <input class="form-check-input Creativetools" type="checkbox" value="" id="Check4">
               <label class="form-check-label" for="Check4">
                 Musical Instruments
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="Check5">
+              <input class="form-check-input Creativetools" type="checkbox" value="" id="Check5">
               <label class="form-check-label" for="Check5">
                 Vocal
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="Check1">
+              <input class="form-check-input Creativetools" type="checkbox" value="" id="Check1">
               <label class="form-check-label" for="Check1">
                 Dance
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="Check2">
+              <input class="form-check-input Creativetools" type="checkbox" value="" id="Check2">
               <label class="form-check-label" for="Check2">
                 Doodling
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="Check3">
+              <input class="form-check-input Creativetools" type="checkbox" value="" id="Check3">
               <label class="form-check-label" for="Check3">
                 DIY/ LI
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="Check4">
+              <input class="form-check-input Creativetools" type="checkbox" value="" id="Check4">
               <label class="form-check-label" for="Check4">
                 Content Writing
               </label>
             </div>
+
+			<!--Get the values of the checkboxes-->
+            <input type="text" name="" readonly="" id="ct">	
 
           </div>
         </div>
@@ -516,41 +592,44 @@ form.registration-form fieldset {
           <div class="card-body">
 
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="Check1">
+              <input class="form-check-input PersonalityDevelopment" type="checkbox" value="" id="Check1">
               <label class="form-check-label" for="Check1">
                 NLP
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="Check2">
+              <input class="form-check-input PersonalityDevelopment" type="checkbox" value="" id="Check2">
               <label class="form-check-label" for="Check2">
                 Personal Finance
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="Check3">
+              <input class="form-check-input PersonalityDevelopment" type="checkbox" value="" id="Check3">
               <label class="form-check-label" for="Check3">
                 Stress Management
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="Check4">
+              <input class="form-check-input PersonalityDevelopment" type="checkbox" value="" id="Check4">
               <label class="form-check-label" for="Check4">
                 Cope Up VUCA World
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="Check5">
+              <input class="form-check-input PersonalityDevelopment" type="checkbox" value="" id="Check5">
               <label class="form-check-label" for="Check5">
                 Languages
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="Check1">
+              <input class="form-check-input PersonalityDevelopment" type="checkbox" value="" id="Check1">
               <label class="form-check-label" for="Check1">
                 Business Communication
               </label>
             </div>
+
+            <!--Get the values of the checkboxes-->
+            <input type="text" name="" readonly="" id="pd">	
 
           </div>
         </div>
@@ -567,35 +646,38 @@ form.registration-form fieldset {
           <div class="card-body">
 
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="Check1">
+              <input class="form-check-input Solopreneurship" type="checkbox" value="" id="Check1">
               <label class="form-check-label" for="Check1">
                 SetUp Solopreneurship
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="Check2">
+              <input class="form-check-input Solopreneurship" type="checkbox" value="" id="Check2">
               <label class="form-check-label" for="Check2">
                 Personal Branding
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="Check3">
+              <input class="form-check-input Solopreneurship" type="checkbox" value="" id="Check3">
               <label class="form-check-label" for="Check3">
                 Blog Writing
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="Check4">
+              <input class="form-check-input Solopreneurship" type="checkbox" value="" id="Check4">
               <label class="form-check-label" for="Check4">
                 Wordpress/ Website
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="Check5">
+              <input class="form-check-input Solopreneurship" type="checkbox" value="" id="Check5">
               <label class="form-check-label" for="Check5">
                 Digital Marketing
               </label>
             </div>
+
+            <!--Get the values of the checkboxes-->
+            <input type="text" name="" readonly="" id="s">	
 
           </div>
         </div>
